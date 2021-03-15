@@ -1,16 +1,16 @@
-import React, { useRef } from 'react'
-import VerticalSpace from './VerticalSpace'
+import React, { useRef } from 'react';
+import VerticalSpace from './VerticalSpace';
 
-export default function Form ({ onSuccess }) {
-  const firstNameRef = useRef()
+export default function Form({ onSuccess }) {
+  const firstNameRef = useRef();
 
   const onSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     onSuccess({
       firstName: firstNameRef.current.value,
-    })
-  }
+    });
+  };
 
   return (
     <>
@@ -19,7 +19,12 @@ export default function Form ({ onSuccess }) {
         <div className="form-item">
           <label htmlFor="first-name">First name</label>
           <VerticalSpace height={5} />
-          <input id="first-name" type="text" placeholder="Type in your first name" ref={firstNameRef} />
+          <input
+            id="first-name"
+            type="text"
+            placeholder="Type in your first name"
+            ref={firstNameRef}
+          />
         </div>
 
         <VerticalSpace height={5} />
@@ -27,7 +32,11 @@ export default function Form ({ onSuccess }) {
         <div className="form-item">
           <label htmlFor="last-name">Last name</label>
           <VerticalSpace height={5} />
-          <input id="last-name" type="text" placeholder="Type in your last name" />
+          <input
+            id="last-name"
+            type="text"
+            placeholder="Type in your last name"
+          />
         </div>
 
         <VerticalSpace height={5} />
@@ -43,5 +52,5 @@ export default function Form ({ onSuccess }) {
         <input type="submit" value="Save!" />
       </form>
     </>
-  )
+  );
 }
